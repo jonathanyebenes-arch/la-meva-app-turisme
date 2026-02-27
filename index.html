@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ca"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;TREMP BASE CAMP | Motor de Cerca i Logística&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Font Awesome CDN per a les icones --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts: Roboto i Big Shoulders Stencil per a l'estètica industrial --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Big+Shoulders+Stencil+Text:wght@800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--adobe: #BF5E48;<span class="Apple-converted-space">      </span>/* Terracota */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--antracita: #363D42; <span class="Apple-converted-space">  </span>/* Gris Antracita */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--salvia: #768673; <span class="Apple-converted-space">    </span>/* Verd Sàlvia */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-page: #1a1d20;<span class="Apple-converted-space">    </span>/* Fons fosc de la pàgina */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-app: #f4f4f4; <span class="Apple-converted-space">    </span>/* Fons del contenidor de l'app */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-dark: #2d3436;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-light: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--white: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Roboto', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-page);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Tipografia Stencil */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3, .stencil-font {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Big Shoulders Stencil Text', cursive;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Contenidor de l'Aplicació (Mobile First) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.app-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 480px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-app);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 40px rgba(0,0,0,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Capçalera Industrial */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--antracita);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 6px solid var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Semàfor d'Ocupació */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.occupancy-indicator {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #252a2e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.4rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dot {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2ecc71;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 8px #2ecc71;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse 2s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { opacity: 0.5; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Navegació Tàctil */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav.tab-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(5, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--antracita);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.8rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: rgba(255,255,255,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 4px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-item i { font-size: 1.2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-item span { font-size: 0.6rem; margin-top: 4px; font-weight: bold; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-item.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 4px solid var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Seccions de Contingut */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>main {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: slideIn 0.3s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-content.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--antracita);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Targetes de Tarifes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 8px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid var(--salvia);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.price-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.6rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eee;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.price-item:last-child { border: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.price-value { font-weight: 700; color: var(--adobe); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Botons d'Acció Primària */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-reserve {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 0 #9c4a38;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-reserve:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(3px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Checklist de Serveis */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-box i {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--salvia);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Localització i Ruta */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.location-data {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--antracita);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', Courier, monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.map-preview {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 180px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #666;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px dashed var(--salvia);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Normes i Convivència */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.norm-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(118, 134, 115, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.norm-item i { color: var(--salvia); font-size: 1.2rem; margin-top: 3px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Cercador d'entorn */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-bar input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.8rem 1rem 0.8rem 2.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-bar i {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #999;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.poi-list-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-right: 4px solid var(--adobe);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.poi-info h4 { font-size: 1rem; margin-bottom: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.poi-info p { font-size: 0.8rem; color: #666; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #eee;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.external-links {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ext-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.4rem 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.7rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--antracita);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="app-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CAPÇALERA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="header-title"&gt;TREMP BASE CAMP&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="occupancy-indicator"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="dot"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Ocupació: 12 places lliures&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- TABS NAVEGACIÓ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="tab-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-item active" onclick="openTab(event, 'tarifes')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-tags"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Tarifes&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-item" onclick="openTab(event, 'serveis')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-microchip"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Tècnic&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-item" onclick="openTab(event, 'ruta')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-compass"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Accés&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-item" onclick="openTab(event, 'normes')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-gavel"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Normes&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-item" onclick="openTab(event, 'prop')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-store"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Prop&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONTINGUT PRINCIPAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECCIÓ: TARIFES --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="tarifes" class="section-content active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Preus i Disponibilitat&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;Pernocta (24h)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="price-value"&gt;16,00€&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;Electricitat (10A)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="price-value"&gt;+5,00€&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;Només canvi d'aigües&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="price-value"&gt;6,00€&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;Pack Setmana (7 nits)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="price-value"&gt;95,00€&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 0.85rem; color: #666; font-style: italic;"&gt;* Inclou buidatge de grises/negres, omplert d'aigua i Wi-Fi.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-reserve" onclick="confirmReserva()"&gt;RESERVAR PLAÇA ARA&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECCIÓ: SERVEIS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="serveis" class="section-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Checklist de Serveis&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="services-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-faucet-drip"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Aigua Potable&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-biohazard"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Buidatge Negres&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-plug"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Llum 10 Amps&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-wifi"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Wi-Fi 5G&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Vídeo-Vigilància&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-tshirt"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Lavanderia&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card" style="margin-top: 1rem; border-left-color: var(--adobe);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Detalls Tècnics&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="font-size: 0.9rem;"&gt;Places anivellades de 8x5m. Connexions elèctriques tipus CEE (Europeu). Zona de buidatge accessible sense maniobres complexes.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECCIÓ: RUTA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="ruta" class="section-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Com Arribar-hi&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Entrada ampla (7m) lliure de branques baixes i girs tancats. Apte per a vehicles XL.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="location-data"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;strong&gt;GPS DECIMAL:&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>42.16641, 0.89324&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;strong&gt;GPS DMS:&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>42°09'59.1"N 0°53'35.7"E</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="map-preview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;i class="fas fa-camera"&gt;&lt;/i&gt; Vista de l'accés principal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://www.google.com/maps/dir/?api=1&amp;destination=42.16641,0.89324" target="_blank" class="btn-reserve" style="background: var(--antracita); box-shadow: 0 4px 0 #1a1d20;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-route"&gt;&lt;/i&gt; OBRIR RUTA A GOOGLE MAPS</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECCIÓ: NORMES --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="normes" class="section-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Normes i Convivència&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="norm-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-moon"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Horari de Silenci&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;De 22:30h a 08:00h. Respectem el descans dels veïns.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="norm-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-umbrella-beach"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Zones d'Acampada&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Permès treure tendals i taules exclusivament dins la parcel·la.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="norm-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-recycle"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Gestió de Residus&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Utilitzeu els contenidors de reciclatge. No abocar aigües al terra.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECCIÓ: PROP --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="prop" class="section-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Abastiment i Oci&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="search-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-search"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" placeholder="Busca supermercats, GLP, rutes..." id="poiSearch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="poiContainer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="poi-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="poi-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Supermercat Local&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;A 500m - Productes de proximitat&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-shopping-basket"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="poi-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="poi-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Gasolinera amb GLP&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;A 1.5km - Càrrega de gas i combustible&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-gas-pump"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="poi-list-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="poi-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Ruta del Congost&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;A 2km - Senderisme d'alt nivell&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-hiking"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="external-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="ext-btn"&gt;PARK4NIGHT ⭐ 4.9&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="ext-btn"&gt;CARAMAPS&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size: 0.75rem; color: #888;"&gt;&amp;copy; 2024 TREMP BASE CAMP. Expert, Tècnic, Proper.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Gestió de Pestanyes (Tabs)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openTab(evt, tabName) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var i, tabcontent, tablinks;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>tabcontent = document.getElementsByClassName("section-content");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (i = 0; i &lt; tabcontent.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tabcontent[i].classList.remove("active");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>tablinks = document.getElementsByClassName("tab-item");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (i = 0; i &lt; tablinks.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tablinks[i].classList.remove("active");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById(tabName).classList.add("active");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>evt.currentTarget.classList.add("active");</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Scroll to top</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.scrollTo(0, 0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Filtre de cerca a la pestanya "Prop"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('poiSearch').addEventListener('input', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const query = e.target.value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const items = document.querySelectorAll('.poi-list-item');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>items.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const text = item.textContent.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>item.style.display = text.includes(query) ? 'flex' : 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Simulació de reserva</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function confirmReserva() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const msg = "S'està obrint el motor de reserves en temps real...\nRecorda tenir a mà les mides de la teva AC.";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.log(msg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert(msg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
